@@ -1,0 +1,17 @@
+public class Main {
+    public static int[] lcmAndGcd(int a, int b) {
+        int originalA = a;
+        int originalB = b;
+
+        // GCD using Euclidean algorithm
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+
+        int gcd = a;
+        int lcm = (originalA * originalB) / gcd;
+
+        return new int[]{lcm, gcd};
+    }
