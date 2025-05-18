@@ -1,0 +1,19 @@
+public class InsertionSortEasy {
+    public static void insertsort(int[] arr) {
+        int n = arr.length;
+
+        // Loop through each element starting from the second one
+        for (int i = 1; i < n; i++) {
+            int current = arr[i];     // The value to insert
+            int previous = i - 1;
+
+            // Move larger elements one step ahead
+            while (previous >= 0 && arr[previous] > current) {
+                arr[previous + 1] = arr[previous];
+                previous--;
+            }
+
+            // Insert the current value into the correct position
+            arr[previous + 1] = current;
+        }
+    }
