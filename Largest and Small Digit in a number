@@ -1,24 +1,26 @@
- 
-class Gfg 
-{ 
-      
-
-static void Digits(int n) 
-{ 
-    int largest = 0; 
-    int smallest = 9; 
-  
-    while(n != 0)  
-    { 
-        int r = n % 10; 
-  
+import java.util.Scanner;
+public class Main{
+    public static void largestAndSmallest(int n )
+    {
+        int largest = 0;
+        int smallest = 9;
+        while (n != 0)
+        {
+            int r = n % 10 ;
+            smallest = Math.min(r,smallest);
+            largest = Math.max(r,largest);
+            n /= 10;
+        }
+        System.out.println("Smallest Digit is " + smallest + " and largets digit is  " + largest );
         
-        largest = Math.max(r, largest); 
-  
-         
-        smallest = Math.min(r, smallest); 
-  
-        n = n / 10; 
-    } 
-    System.out.println(largest + " " + smallest); 
-} 
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int num = sc.nextInt();
+        largestAndSmallest(num);
+        
+    }
+    
+}
