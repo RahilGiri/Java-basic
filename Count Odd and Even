@@ -1,14 +1,36 @@
+import java.util.Scanner;
+public class Main {
+    
+    public static void countOddEven(int arr[]) {
+        int odd = 0;
+        int even = 0;
 
-    static int[] countOddEven(int[] arr) {
-        int odd = 0, even = 0;
-
-        for (int num : arr) {
-            if (num % 2 == 0)
+        for(int n: arr) {
+            if(n % 2 == 0) {
                 even++;
-            else
+            } else {
                 odd++;
+            }
+        }
+        System.out.println("Even number count is  " + even);
+        System.out.println("Odd number count is  "+ odd);
+    }
+        
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the total number of Array Elements");
+        int totalNumber = sc.nextInt();
+        
+        int arr[] = new int[totalNumber];
+
+        System.out.println("Array Elements are ");
+        for(int i = 0; i < totalNumber; i++) {
+            arr[i] = sc.nextInt();
         }
 
-        return new int[]{odd, even};
+        countOddEven(arr);
+
+        
     }
 }
