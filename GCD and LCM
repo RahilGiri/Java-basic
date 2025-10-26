@@ -1,5 +1,8 @@
-public class Main {
-    public static int[] lcmAndGcd(int a, int b) {
+import java.util.Scanner;
+
+class Main {
+
+    public static int[] gcdAndLcm(int a, int b) {
         int originalA = a;
         int originalB = b;
 
@@ -15,3 +18,18 @@ public class Main {
 
         return new int[]{lcm, gcd};
     }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter A: ");
+        int num1 = sc.nextInt();
+        System.out.print("Enter B: ");
+        int num2 = sc.nextInt();
+
+        int[] result = gcdAndLcm(num1, num2);
+
+        System.out.println("LCM of " + num1 + " and " + num2 + " is: " + result[0]);
+        System.out.println("GCD of " + num1 + " and " + num2 + " is: " + result[1]);
+    }
+}
